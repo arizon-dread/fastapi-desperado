@@ -20,7 +20,9 @@ async def transform(content: Desperado):
     return newText
 
 def getCharOrText(c):
-    if (c in "bcdfghjklmnpqrstvxzBCDFGHJKLMNPQRSTVXZ"):
+    if (c in "bcdfghjklmnpqrstvxz"):
         return c+"o"+c
+    elif (c in "BCDFGHJKLMNPQRSTVXZ"):
+        return c+"O"+c
     else:
         return c
