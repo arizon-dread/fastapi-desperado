@@ -5,3 +5,8 @@
 
  ## The functionality is not the main point
  The main point is to try building a simple api and putting it into a container. The actual function is of lesser importance.
+ ## Starting locally
+ To start the application from the project root folder:
+ ``` bash
+ ~/.local/bin/uvicorn app.main:app --host 0.0.0.0 --port 5000 --reload
+ ```
