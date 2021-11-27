@@ -10,3 +10,4 @@
  ``` bash
  ~/.local/bin/uvicorn app.main:app --host 0.0.0.0 --port 5000 --reload
  ```
+ Visit /docs/ for OpenAPI interactive api documentation. (Swagger-like experience)
