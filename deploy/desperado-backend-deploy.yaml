@@ -23,4 +23,14 @@ spec:
         ports:
           - containerPort: 5000
         resources: {}
+        volumeMounts:
+          - name: config
+            mountPath: /app/config/
+      volumes:
+        - name: config
+          configMap:
+            name: config
+            items:
+            - key: cors.txt
+              path: cors.txt
 status: {}

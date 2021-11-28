@@ -7,10 +7,8 @@ from .models.desperado import Desperado
 
 
 app = FastAPI()
-
-origins = [
-    "http://localhost:4200"
-]
+file = open("app/config/cors.txt", "r")
+origins = file.read()
 
 app.add_middleware(
     CORSMiddleware, 
