@@ -10,7 +10,7 @@ spec:
   - name: backend
     port: 80
     protocol: TCP
-    targetPort: 80
+    targetPort: 5000
   selector:
     app: desperado-backend
   type: ClusterIP

@@ -20,5 +20,7 @@ spec:
       containers:
       - image: k3d-registry.localhost:5000/python-desperado:v0.1
         name: python-desperado
+        ports:
+          - containerPort: 5000
         resources: {}
 status: {}
