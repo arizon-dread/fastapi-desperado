@@ -1,0 +1,3 @@
+resources:
+  - backend-svc.yaml
+  - desperado-backend-deploy.yaml

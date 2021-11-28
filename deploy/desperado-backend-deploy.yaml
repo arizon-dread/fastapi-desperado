@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: desperado-backend
+  name: desperado-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: desperado-backend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: desperado-backend
+    spec:
+      containers:
+      - image: k3d-registry.localhost:5000/python-desperado:v0.1
+        name: python-desperado
+        resources: {}
+status: {}
