@@ -2,13 +2,14 @@ from typing import Optional, Text
 from fastapi import FastAPI
 from fastapi.encoders import jsonable_encoder
 from fastapi.middleware.cors import CORSMiddleware
-from starlette.middleware import cors
 from .models.desperado import Desperado
 
 
 app = FastAPI()
 file = open("app/config/cors.txt", "r")
-origins = file.read()
+origins = file.read().split()
+
+print(origins)
 
 app.add_middleware(
     CORSMiddleware, 

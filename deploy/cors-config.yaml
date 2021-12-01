@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
-  cors.txt: http://app.localhost:8081
+  cors.txt: "http://app.localhost:8081"
 kind: ConfigMap
 metadata:
   creationTimestamp: null
-  name: config
+  name: cors-config

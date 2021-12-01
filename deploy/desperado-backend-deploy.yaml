@@ -19,17 +19,18 @@ spec:
     spec:
       containers:
       - image: k3d-registry.localhost:5000/python-desperado:v0.1
+        imagePullPolicy: Always
         name: python-desperado
         ports:
           - containerPort: 5000
         resources: {}
         volumeMounts:
           - name: config
-            mountPath: /app/config/
+            mountPath: /code/app/config
       volumes:
         - name: config
           configMap:
-            name: config
+            name: cors-config
             items:
             - key: cors.txt
               path: cors.txt
