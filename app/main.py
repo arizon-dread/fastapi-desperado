@@ -36,6 +36,6 @@ def getCharOrText(c):
     if (c in "bcdfghjklmnpqrstvxz"):
         return c+"o"+c
     elif (c in "BCDFGHJKLMNPQRSTVXZ"):
-        return c+"O"+c
+        return c+"o"+c.lower()
     else:
         return c
