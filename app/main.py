@@ -2,7 +2,11 @@ from typing import Optional, Text
 from fastapi import FastAPI
 from fastapi.encoders import jsonable_encoder
 from fastapi.middleware.cors import CORSMiddleware
+from app.handlers.dateToSeconds import DateToSeconds
+
+from app.models.birthdaySeconds import BirthdaySeconds
 from .models.desperado import Desperado
+from .handlers.textManipulator import TextManipulator
 
 
 app = FastAPI()
@@ -24,18 +28,13 @@ def root():
 
 @app.post('/api/desperado', response_model=Desperado)
 async def transform(request: Desperado):
-    responseText: str
-    responseText = ""
-    for c in request.text:
-        responseText += getCharOrText(c)
-    response = Desperado(text=responseText)
-        
-    return response
+    responseText: str = ""
+    textMnpltr = TextManipulator()
+    responseText = textMnpltr.transform(request)
+    return responseText
 
-def getCharOrText(c):
-    if (c in "bcdfghjklmnpqrstvxz"):
-        return c+"o"+c
-    elif (c in "BCDFGHJKLMNPQRSTVXZ"):
-        return c+"o"+c.lower()
-    else:
-        return c
+@app.post('/api/birthdaySeconds', response_model=BirthdaySeconds)
+async def birthdaySeconds(request: BirthdaySeconds):
+    dateToSeconds = DateToSeconds()
+    request.birthdaySeconds = dateToSeconds.getSeconds(request.birthday)
+    return request
