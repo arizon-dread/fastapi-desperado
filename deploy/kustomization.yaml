@@ -2,3 +2,4 @@ resources:
   - backend-svc.yaml
   - desperado-backend-deploy.yaml
   - cors-config.yaml
+  - backend-ingress.yaml
