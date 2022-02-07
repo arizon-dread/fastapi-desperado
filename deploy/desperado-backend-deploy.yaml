@@ -18,7 +18,7 @@ spec:
         app: desperado-backend
     spec:
       containers:
-      - image: k3d-registry.localhost:5000/python-desperado:v0.1
+      - image: k3d-registry.localhost:5000/python-desperado:v0.2
         imagePullPolicy: Always
         name: python-desperado
         ports:
