@@ -11,7 +11,7 @@ from .handlers.textManipulator import TextManipulator
 
 app = FastAPI()
 file = open("app/config/cors.txt", "r")
-origins = file.read().split()
+origins = file.read().split(";")
 
 print(origins)
 
